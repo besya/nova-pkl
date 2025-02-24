@@ -1,0 +1,9 @@
+[
+    {
+        "key": "besya.pkl.language-server-path",
+        "title": "Pkl Language Server Path",
+        "type": "path",
+        "placeholder": "/opt/homebrew/bin/pkl-lsp",
+        "default": "/opt/homebrew/bin/pkl-lsp"
+    }
+]

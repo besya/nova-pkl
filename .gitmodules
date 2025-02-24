@@ -1,0 +1,3 @@
+[submodule "tree-sitter-pkl"]
+	path = tree-sitter-pkl
+	url = https://github.com/apple/tree-sitter-pkl.git

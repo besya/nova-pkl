@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<syntax name="pkl">
+    <meta>
+        <name>Pkl</name>
+        <type>compiled</type>
+        <preferred-file-extension>pkl</preferred-file-extension>
+    </meta>
+
+    <detectors>
+        <filename priority="1.0">PklProject</filename>
+        <extension priority="1.0">pkl</extension>
+        <extension priority="1.0">pcf</extension>
+        <match-content lines="1" priority="0.7">\#\!.*?\bpkl\b</match-content>
+    </detectors>
+
+    <indentation>
+        <increase>
+            <expression>(\{[^}\"']*$)|(\[[^\]\"']*$)|(\([^)\"']*$|:$)</expression>
+        </increase>
+        <decrease>
+            <expression>^\s*(\s*/\*.*\*/\s*)*[\}\]\)\\]</expression>
+        </decrease>
+    </indentation>
+
+    <comments>
+        <single>
+            <expression>//</expression>
+        </single>
+        <multiline>
+            <starts-with>
+                <expression>/*</expression>
+            </starts-with>
+            <ends-with>
+                <expression>*/</expression>
+            </ends-with>
+        </multiline>
+    </comments>
+
+    <surrounding-pairs>
+        <pair open="{" close="}" />
+        <pair open="[" close="]" />
+        <pair open="(" close=")" />
+        <pair open='"' close='"' />
+        <pair open="'" close="'" />
+        <pair open='#"' close='"#' />
+        <pair open='##"' close='"##' />
+        <pair open='###"' close='"###' />
+        <pair open='"""' close='"""' />
+        <pair open='#"""' close='"""#' />
+        <pair open='##"""' close='"""##' />
+        <pair open='###"""' close='"""###' />
+        <pair open="`" close="`" />
+    </surrounding-pairs>
+
+    <tree-sitter language="pkl">
+        <highlights />
+        <folds />
+        <symbols />
+    </tree-sitter>
+</syntax>
