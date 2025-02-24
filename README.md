@@ -56,3 +56,11 @@ Build (builds `src` to `pkl.novaextension/Scripts`)
 Watch (rebuilds `src` to `pkl.novaextension/Scripts` on `src` change)
 
 `npm run watch`
+
+Compile (compiles tree-sitter-pkl.dylib)
+
+`npm run compile`
+
+Sign (codesign tree-sitter-pkl.dylib)
+
+`npm run sign`

@@ -7,7 +7,8 @@
         "build": "npm run clean && tsc",
         "dev": "ts-node src/main.ts",
         "watch": "tsc --watch",
-        "compile": "./compile_parser.sh /Applications/Nova.app"
+        "compile": "./compile_parser.sh /Applications/Nova.app",
+        "sign": "codesign -s - pkl.novaextension/Syntaxes/libtree-sitter-pkl.dylib"
     },
     "keywords": [],
     "author": "",
