@@ -27,19 +27,22 @@ brew install pkl pkl-lsp
 
     `git clone https://github.com/besya/nova-pkl.git`
 
-2. Navigate to project folder
+1. Add tree-sitter-pkl git submodule
+    `git submodule add --force https://github.com/apple/tree-sitter-pkl.git`
+
+1. Navigate to project folder
 
     `cd nova-pkl`
 
-3. Install dependencies
+1. Install dependencies
 
     `npm install`
 
-4. Run watch
+1. Run watch
 
     `npm run watch`
 
-5. Enable extension
+1. Enable extension
 
     **Extensions > Activate Project as Extension**
 

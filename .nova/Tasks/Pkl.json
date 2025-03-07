@@ -1,0 +1,44 @@
+{
+  "actions" : {
+    "build" : {
+      "enabled" : true,
+      "preActions" : [
+        {
+          "name" : "Remove dylib",
+          "script" : "#!\/bin\/sh\n\necho \"Removing dylib...\"\nrm \t.\/pkl.novaextension\/Syntaxes\/libtree-sitter-pkl.dylib &2> \/dev\/null",
+          "type" : "runScript"
+        },
+        {
+          "name" : "Install dependencies",
+          "script" : "#!\/bin\/sh\n\necho \"Installing dependencies...\"\nnpm install",
+          "type" : "runScript"
+        },
+        {
+          "script" : "#!\/bin\/sh\n\necho \"Cleaning build artifacts...\"\nnpm run clean",
+          "type" : "runScript"
+        },
+        {
+          "name" : "Compile dylib",
+          "script" : "#!\/bin\/sh\n\necho \"Compiling dylib...\"\nnpm run compile",
+          "type" : "runScript"
+        },
+        {
+          "name" : "Sign dylib",
+          "script" : "#!\/bin\/sh\n\necho \"Signing dylib\"\ncodesign -s - pkl.novaextension\/Syntaxes\/libtree-sitter-pkl.dylib",
+          "type" : "runScript"
+        }
+      ],
+      "script" : "#!\/bin\/sh\n\nnpm run build"
+    },
+    "clean" : {
+      "enabled" : true,
+      "script" : "#!\/bin\/sh\n\necho \"Cleaning...\"\nnpm run clean"
+    },
+    "run" : {
+      "enabled" : true,
+      "script" : "#!\/bin\/sh\n\necho \"Watching...\"\nnpm run watch"
+    }
+  },
+  "buildBeforeRunning" : true,
+  "openLogOnRun" : "start"
+}
